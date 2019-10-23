@@ -1,0 +1,60 @@
+java窗体应用中，可以使用Timer对象，按计划(schedule)每隔一段时间间隔(interval)，反复做一件事(TimerTask)。
+定时器三个要素;
+  调用timer.schedule发明方法
+	timer.schedule("做什么事",延迟几毫秒开始,每隔几毫秒重复一次);
+  "做什么事":TimerTask   匿名内部类;必须重写其run方法
+	newTimerTask(){
+	  @override
+	  public void run(){
+	     做什么事;
+	  }
+	};
+  每隔多长时间：interval 单位：毫秒
+
+实例
+
+		Timer timer = new Timer();
+		// 调用定时器对象的schedule方法，做计划
+		timer.schedule(new TimerTask() {
+			// 定时器变量
+			private int runTime = 0;
+
+			@Override
+			public void run() {
+				// 除了repaint方法外，其余方法只在RUNNING状态下执行
+				if (state == RUNNING) {
+					// 每执行一次run方法定时器变量加1
+					runTime++;
+					// 自动随机创建敌机对象
+					if (runTime % 50 == 0) { // 只有当定时器数为50倍数时创建对象
+						nextOne();
+					}
+					// 遍历调用每个对象的step方法
+					for (int i = 0; i < flyers.length; i++) {
+						flyers[i].step();
+					}
+					// 每300毫秒创建一次子弹
+					if (runTime % 30 == 0) {
+						shoot();
+					}
+					// 遍历子弹数组bullets中的所有子弹对象的step方法
+					for (int i = 0; i < bullets.length; i++) {
+						bullets[i].step();
+					}
+					// 英雄机的动画效果
+					hero.step();
+					// 添加子弹击中敌人的碰撞检测
+					bang();
+					// 敌人和英雄机的碰撞
+					hit();
+					// 添加飞行物越界销毁
+					outOfBounds();
+					// 将runTime数限制在范围内
+					runTime = runTime % 150;
+				}
+				/* 强调：一旦界面发生变化，必须调用repaint方法重新绘制界面 */
+				repaint();
+			}
+
+		}, 10, 10);
+

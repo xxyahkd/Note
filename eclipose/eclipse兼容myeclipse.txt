@@ -1,0 +1,6 @@
+default output folder 改为
+WebRoot\WEB-INF\classes
+
+
+content directory 改为
+WebRoot

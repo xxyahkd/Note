@@ -1,0 +1,51 @@
+create database  学生选课 
+go
+use 学生选课
+go
+
+create table 学生(学号 char(4) not null unique,
+                  姓名 VARCHAR(8) NOT  NULL,
+                  性别 CHAR (2),
+                  年龄 SMALLINT DEFAULT 21,
+                  电话 CHAR (13),
+                  系编号 CHAR (4),
+                  primary key(学号),
+                  CONSTRAINT C1 CHECK (性别 IN ('男','女')))
+
+CREATE TABLE 课程(课程号 CHAR(5) PRIMARY KEY,
+                  课程名称 VARCHAR(20),
+                  学分 NUMERIC (2,1)
+                  CONSTRAINT C2 CHECK(学分 between 0 and 10))
+
+CREATE TABLE 选课(学号 char(4),
+                  课程号 CHAR (5),
+                  成绩 SMALLINT,
+                  CONSTRAINT C3 CHECK (成绩 BETWEEN 0 AND 100),
+                  CONSTRAINT C4 PRIMARY KEY(学号,课程号),
+                  CONSTRAINT C5 FOREIGN KEY (学号)REFERENCES 学生 (学号),
+                  CONSTRAINT C6 FOREIGN KEY (课程号) REFERENCES 课程(课程号))
+
+insert into 学生(学号, 姓名,性别,年龄,电话,系编号) values('s001','王明','男',19,'86824571','D2')
+insert into 学生(学号, 姓名,性别,年龄,电话,系编号) values('s002','李勇','男',23,'89454321','D3')
+insert into 学生(学号, 姓名,性别,年龄,电话,系编号) values('s003','刘燕','女',21,null,'D1')
+insert into 学生(学号, 姓名,性别,年龄,电话,系编号) values('s004','王萍','女',23,null,'D1')
+insert into 学生(学号, 姓名,性别,年龄,电话,系编号) values('s005','王佳','男',24,'13098765892','D3')
+insert into 学生(学号, 姓名,性别,年龄,电话,系编号) values('s006','赵婷','女',20,null,'D1')
+
+insert into 课程(课程号,课程名称,学分) values('c1','数据库系统原理',4)
+insert into 课程(课程号,课程名称,学分) values('c2','c程序设计',4)
+insert into 课程(课程号,课程名称,学分) values('c3','计算机体系结构',3)
+insert into 课程(课程号,课程名称,学分) values('c4','自动控制原理',2)
+insert into 课程(课程号,课程名称,学分) values('c5','数据结构',4)
+
+insert into 选课(学号,课程号,成绩) values('s001','c1',83)
+insert into 选课(学号,课程号,成绩) values('s001','c2',89)
+insert into 选课(学号,课程号,成绩) values('s001','c3',65)
+insert into 选课(学号,课程号,成绩) values('s001','c4',85)
+insert into 选课(学号,课程号,成绩) values('s001','c5',69)
+insert into 选课(学号,课程号,成绩) values('s002','c3',78)
+insert into 选课(学号,课程号,成绩) values('s002','c4',75)
+insert into 选课(学号,课程号,成绩) values('s004','c1',85)
+insert into 选课(学号,课程号,成绩) values('s005','c1',95)
+insert into 选课(学号,课程号,成绩) values('s005','c2',92)
+insert into 选课(学号,课程号,成绩) values('s005','c3',76)

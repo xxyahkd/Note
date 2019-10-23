@@ -1,0 +1,2 @@
+语法：
+<a href="#" onclick="return confirm('真的要删除吗？')">删除</a>

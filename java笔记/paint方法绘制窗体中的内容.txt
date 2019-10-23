@@ -1,0 +1,15 @@
+paint方法：
+	是JPanel类的父类JComponent中的方法
+	要定制图形界面的内容，就要重写父类的paint方法
+	由java图形界面执行setVisible时自动调用。开发者不要直接调用paint方法
+	参数Graphics g ：可以看做一个画笔。使用画笔可以绘制出各种想要的图形
+	包含各种drawXXX方法。使用坐标位置以及宽高等参数绘制图形
+
+例如：
+	@Override
+	pubilc void paint(Graphics g){
+	  g.drawLine(10,10,100,100);//从点(x=10,y=10)点到(x=100,y=100)点，画直线
+	  g.drawRect(10,10,100,100);//从点(x=10,y=10)为左上角画一个宽100，高100的矩形
+	  g.drawOval(10,10,100,100);//从点(x=10,y=10)为左上角在100*100的范围内画一个圆
+	  g.drawImage(ShootGame.background,0,0,null);以0,0坐标为左上角，开始绘制background
+	}

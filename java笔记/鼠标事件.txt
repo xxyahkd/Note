@@ -1,0 +1,43 @@
+/* 游戏开始时要定义鼠标事件的监听 */
+		// 创建MouseAdapter匿名内部类
+		MouseAdapter l = new MouseAdapter() { // 只是鼠标事件的实现类，并不是监听
+			// 重写希望的鼠标事件方法----鼠标移动--仅是实现时间的响应
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				// 只有在RUNNING状态下才进行
+				if (state == RUNNING) {
+					// 获得鼠标的新位置x，y
+					int x = e.getX();
+					int y = e.getY();
+					// 将鼠标位置传递给英雄机的的move方法
+					hero.move(x, y);
+				}
+			}
+
+			// 开始鼠标单击，开始游戏
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (state == START) {
+					state = RUNNING;
+				}
+			}
+
+			//鼠标移出游戏暂停
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				if(state==RUNNING) {
+					state=PAUSE;
+				}
+			}
+			//鼠标移入游戏界面，游戏继续
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				if(state==PAUSE) {
+					state=RUNNING;
+				}
+			}
+
+		};
+		// 要响应鼠标事件，必须将鼠标事件添加到程序的监听器
+		this.addMouseMotionListener(l);// 支持鼠标移动事件
+		this.addMouseListener(l);//支持鼠标单击事件

@@ -1,0 +1,14 @@
+createcreate table 人物属性(
+	姓名 varchar(10),
+	精力 smallint,
+	体力 smallint,
+	耐力 smallint,  
+	速度 smallint,
+	力量 smallint,
+	智力 smallint,
+	幸运 smallint,
+	勇气 smallint,
+	魅力 smallint,
+	正义值 smallint,
+	primary key (姓名)
+);

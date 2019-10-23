@@ -1,0 +1,8 @@
+background:transparent;
+border:0px solid transparent;
+outline:none;
+
+上诉三条语句解释
+背景透明
+把input边框设为透明
+去除蓝色选中框

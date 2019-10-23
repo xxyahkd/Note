@@ -1,0 +1,1 @@
+char ch = cs.toUpperCase();  //将cs中的英文转换为大写 若本为大写则不变

@@ -1,0 +1,13 @@
+
+include 编译指令
+<%@ include file="header.txt" %>
+
+<%@ include file="header.html" %>  //静态道路
+
+<%@ include file="header.jsp" %>
+
+include 导入文件
+
+include 动作指令
+
+<jsp:include page="header.html></jsp:include>

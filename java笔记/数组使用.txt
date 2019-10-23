@@ -1,0 +1,16 @@
+数组创建方式：
+  类型[]   变量名 = new 类型[];
+
+boolean数组默认为false
+int数组默认为0
+数组名=Arrays.copyOf(数组名,长度); 将赋予数组新长度，返回值类型为数组
+
+数组添加    System.arraycopy(添加的数组名, 新数组从哪开始拷贝的下标, 接收拷贝的数组名, 接收拷贝的数组的开始接收下标,拷贝长度);
+实例：
+		Bullet[] newbullets=hero.shoot();//获得英雄机新返回子弹的数组
+		//根据返回的子弹数量去扩容子弹数组bullets
+		bullets=Arrays.copyOf(bullets, bullets.length+newbullets.length);
+		//将newbullets数组所有元素拷贝到bullets数组末尾
+		System.arraycopy(newbullets, 0, bullets, bullets.length-newbullets.length, newbullets.length);
+
+

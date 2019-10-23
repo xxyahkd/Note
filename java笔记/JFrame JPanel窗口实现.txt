@@ -1,0 +1,11 @@
+继承JPanel类 main函数所在类
+JFrame frame=new JFrame("窗体名字");	创建窗体
+frame.setSize(WIDTH,HEIGHT); 	设置窗体大小
+frame.setAlwaysOnTop(true);	true设置窗体总在最上层，false不设置窗体在最上
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//设置窗体关闭同时，退出程序
+frame.setLocationRelativeTo(null);//设置窗体初始位置，null表示居中
+/*在窗体中嵌入背景面板对象--JPanel*/
+ShootGame game=new ShootGame();//创建背景面板对象
+frame.add(game);//将背景面板对象嵌入到窗体对象中
+/*窗体默认不可见！必须显示调用setVisible方法才能显示出窗体*/
+frame.setVisible(true);//自动调用窗体paint方法

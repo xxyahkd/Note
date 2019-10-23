@@ -1,0 +1,17 @@
+try{
+   异常语句
+}catch(Exception ez){
+   捕获异常后的操作
+}finally{
+   一定会执行的代码
+}
+
+常见异常
+
+	数组越界异常	ArrayIndexOutOfBoundsException
+	数字格式化异常	NumberFromatException
+	算数异常	ArithmeticException
+	空指针异常	NullPointerException
+
+抛出异常
+	throw new Exception();

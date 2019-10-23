@@ -1,0 +1,27 @@
+全局加载脚手架
+npm install -g create-react-app
+通过脚手架加载项目
+create-react-app hello-react
+
+
+外加包
+添加propTypes
+npm install --save prop-types
+添加发布订阅功能
+npm install --save pubsub-js
+路由组件
+npm install --save react-router-dom
+UI组件蚂蚁金服
+npm install antd-mobile --save
+按需导包
+npm install react-app-rewired babel-plugin-import --save -dev
+npm install customize-cra --save -dev
+redux使用
+npm install --save redux
+简化redux插件
+npm install --save react-redux
+redux异步插件
+npm install --save redux-thunk
+redux调试插件
+npm install --save-dev redux-devtools-extension
+

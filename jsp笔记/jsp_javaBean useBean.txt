@@ -1,0 +1,24 @@
+HTML页面表单提交
+<from action="do_refiester.jsp" method="post">
+	用户名：<input type="text" name="userName"/>
+	密  码：<input type="password" name="passWord"/>
+	<input type="submit" value="提交"/>
+</form>
+
+
+JSP处理文件
+<jsp:useBean id="user" class="包.类" ></jsp:useBean>  //声明某个java为javabean
+<jsp:setProperty name="user" property="userName"/>   //获取表单内容中的用户名 因为和表单中变量名一致所以省略value
+<jsp:setProperty name="user" property="passWord"/>
+<jsp:getProperty name="user" property="userName"/>   //输出变量值
+<jsp:getProperty name="user" property="psaaWord"/>
+
+
+JavaBean  java文件
+
+继承Serializable
+
+有属性
+有无参构造方法
+有属性的set gst方法
+

@@ -1,0 +1,2 @@
+insert into 表名(表里的几个栏名) values(插入的数据)
+insert into user(userId,userName,passWord) values(2,'ls','dsdfs');

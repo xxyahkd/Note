@@ -1,0 +1,17 @@
+1.导入一下包
+	jackson-annotations-2.9.0
+	jackson-core-2.9.9
+	jackson-core-asl-1.9.13
+	jackson-databind-2.9.9.3
+	jackson-mapper-asl-1.9.13
+2.包的兼容问题
+
+3.伪装为html文件
+	在SpringMVC中如果请求以html结尾，那么就不会返回JSON数据，这是SpringMVC所规定的
+	解决
+		配置多路径
+	<!-- 通过/service/* 进入SpringMVC-->    
+	<servlet-mapping>        
+		<servlet-name>springmvc-406</servlet-name>        
+		<url-pattern>/service/*</url-pattern>    
+	</servlet-mapping>

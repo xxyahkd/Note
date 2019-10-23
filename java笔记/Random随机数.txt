@@ -1,0 +1,8 @@
+   1.
+	r=Math.random(); 返回double类型的[0,1)区间
+
+   2.
+	Random r=new Random();创建随机数对象 括号不填默认为系统的毫秒数 种子数一样，生成的随机数序列是一样的
+	r.nextInt(x);	生成0-x的整数不包括x
+	r.nextDouble(x);生成0-x的小数不包括x 
+

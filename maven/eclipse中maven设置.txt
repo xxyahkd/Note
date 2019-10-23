@@ -1,0 +1,6 @@
+窗口（windows）->首选项（preferences）->Maven
+
+Installations  指定Maven核心程序位置
+
+
+User Setting  指定conf/setting.xml位置，进而获取本地仓库位置

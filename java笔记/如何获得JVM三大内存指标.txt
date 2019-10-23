@@ -1,0 +1,8 @@
+public static void showMen(){
+	//首先获得运行时的对象
+	Runtime rt = Runtime.getRuntime();
+	System.out.println("Max:"+(rt.maxMenory()/1024/1024)+"M");  //JVM能得到的最大内存值
+	System.out.println("Total:"+(rt.totalMenory()/1024/1024)+"M");  //JVM当前获得到的的内存值
+	System.out.println("Free:"+(rt.freeMenory()/1024/1024)+"M");  //JVM空闲的内存值
+
+}

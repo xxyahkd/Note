@@ -1,0 +1,32 @@
+新建一个父工程 注，打包方式为pom
+<packaging>pom</packaging>
+给子工程添加父工程的引用
+<parent>
+        <artifactId>maven-parent</artifactId>
+        <groupId>com.lyc</groupId>
+        <version>1.0-SNAPSHOT</version>
+
+       <!--以当前pom.xml文件的为基准的父工程pom.xml文件位置-->
+       <relativePath>../Parent/pom.xml</relativePath>
+</parent>
+删除子工程中与父工程相同的坐标
+<artifactId>A</artifactId>
+    <packaging>jar</packaging>
+在父工程中统一配置依赖
+<dependencyManagement>  
+ 	 <dependencies> 
+   		<dependency>                    
+			  <groupId>junit</groupId>
+			  <artifactId>junit</artifactId>
+			  <version>${junit.version}</version>  
+		  </dependency>   
+	 </dependencies>  
+</dependencyManagement>
+
+删除子工程中依赖的版本号部分
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+<artifactId>junit</artifactId>
+    </dependency>
+   </dependencies>

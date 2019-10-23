@@ -1,0 +1,10 @@
+https://www.cnblogs.com/dongling/p/9366912.html
+
+
+上网搜索解决方案，才知道 mybatis 的配置文件中，这里 url 中的 '&' 符号应当写成 '&amp;' ，修改后的 url 如下：
+<property name="url" value="jdbc:mysql://localhost:3306/mybatis?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=UTC" />
+
+
+
+尝试修改 url ，将 '&amp;' 改成 '&' ， 结果就运行正常了，说明 JDBC 方式连接 MySQL 不需要对 '&' 进行转义。
+特此记之。

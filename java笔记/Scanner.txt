@@ -1,0 +1,18 @@
+Scanner scann = new Scanner(System.in);  //用变量接收控制台输入
+String str = scann.next();  //接收String字符串到空格、回车、tab都会终止
+String str = scann.nextLine();  //接收String字符串到到回车终止
+
+if (scan.hasNextInt()) {   // 判断输入的是否是整数
+       i = scan.nextInt(); // 接收整数
+            System.out.println("整数数据：" + i);
+}
+
+if (scan.hasNextFloat()) {  // 判断输入的是否是小数
+       f = scan.nextFloat();// 接收小数
+            System.out.println("小数数据：" + f);
+}
+
+if (scan.hasNextDouble()) {  // 判断输入的是否是小数
+       d = scan.nextDouble();// 接收小数
+            System.out.println("小数数据：" + d);
+}

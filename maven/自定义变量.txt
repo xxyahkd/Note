@@ -1,0 +1,7 @@
+<properties>
+	<自定义名>fsd</自定义名>
+</properties>
+
+
+调用
+${自定义名}

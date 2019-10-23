@@ -1,0 +1,1 @@
+str1.equals(str2); //比对str1与str2 是否相等

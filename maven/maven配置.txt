@@ -1,0 +1,47 @@
+https://blog.csdn.net/cs4380/article/details/79158268
+
+
+
+检查JAVA_HOME 环境变量
+cmd echo %JAVA_HOME%
+
+解压Maven核心程序压缩包，放在一个非中文无空格路径下
+D:\PLUG_IN\maven\apache-maven-3.6.2
+
+配置Maven的环境变量
+M2_HOME  D:\PLUG_IN\maven\apache-maven-3.6.2
+path  %M2_HOME%\bin
+
+调试是否安装成功，
+在cmd中输入 mvn -version
+
+在maven解压文件中，conf目录中修改settings.xml文件（D:\maven-3.5.2\conf\settings.xml添加新的仓库路径
+<localRepository>D:\PLUG_IN\maven\repository</localRepository>
+
+
+配置了中央仓库的镜像：（换成了阿里的，比较稳定）
+settings.xml文件中，在mirrors标签中添加子标签如下
+<mirror>
+	<id>nexus-aliyun</id>
+	<name>nexus-aliyun</name>
+	<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+	<mirrorOf>central</mirrorOf>
+</mirror>
+
+
+
+设置Maven创建的工程的jdk版本一劳永逸
+setting.xml文件
+profiles标签
+	<profile>
+		<id>jdk-1.8</id>
+		<activation>
+			<activeByDefault>true</activeByDefault>
+			<jdk>1.8</jdk>
+		</activation>
+		<properties>
+			<maven.compiler.source>1.8</maven.compiler.source>
+			<maven.compiler.target>1.8</maven.compiler.target>
+			<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+		</properties>
+	</profile>

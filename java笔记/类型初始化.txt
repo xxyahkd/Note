@@ -1,0 +1,4 @@
+byte short int long float double   默认0
+boolean  默认 false
+char  默认 /u0000   空格
+引用类型 null

@@ -1,0 +1,14 @@
+原页面：
+<jsp:forward page="login.jsp">
+	<jsp:param value="dasda" name="userName"/>       //跳转后需要传递的参数
+	<jsp:param value="dasdasadas" name="passWord"/>
+</jsp:forward>
+
+跳转后页面：
+<%
+	String userName = request.getParameter("userName");   //reyuest 保存请求信息的地方
+	String passWord = request.getParameter("passWord");
+	out.println(userName);
+	out.println("<br/>");
+	out.println(passWord);
+%>

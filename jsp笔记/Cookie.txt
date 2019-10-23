@@ -1,0 +1,2 @@
+Cookie myCookie=new Cookie("asdas","dasdasdasdas");  //设置Cookie对象
+myCookie.setMaxAge(dasdsa);  //设置最大存活时间  单位秒

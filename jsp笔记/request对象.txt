@@ -1,0 +1,11 @@
+request.getMethod()  获取请求方法名
+request.getRequestURI() 获取UIR字符串
+request.getProtocol()  获取请求的协议
+request.getServerName(）获取请求服务器IP名称
+request.getServerPort()  获取请求的服务器端口
+request.getRemoteAddr()  获取客户端的IP地址
+request.getRemoteHost()  获取客户端的主机名称
+request.getParameter("userName")  获取表单传来的值
+request.getParameterValues("nimzi"); 获取表单某个名字下的值
+request.setAttribute("变量名"，传入的变量名); 传一个变量 要用forward
+request.getAttribute("变量名");获取setArrtribute传入的变量

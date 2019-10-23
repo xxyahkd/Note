@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace命名空间，对sql进行分类化管理，理解sql隔离   注：若mapper代理，namespace有重要作用-->
+<mapper namespace="test">
+
+	<!-- 在映射文件中要配置很多sql语句 -->
+	<!-- 通过这个标签就可以进行查询  
+	     id是标识映射文件中的sql语句，称为statement的id 
+	             将来会将sql语句封装到mapperstatement对象中
+	     #{}表示占位符
+	     #{id}：id表示接受输入的参数 参数的名称就是id，如果输入类型是简单类型，#{}内的参数名可以任意可以是value或者其他名称都行
+	     parameterType  指定输入参数的类型
+	     resultType   指定sql输出结果所映射java的类型，select 指定resultType表示将单条记录映射为java对象，自定义类与文件名一样，传限定名
+	      -->
+	<select id="findStudentById" parameterType="int" resultType="cn.itcast.mybatis.po.User">
+		SELECT * FROM student WHERE Sid=#{id}
+	</select>
+</mapper>
+	

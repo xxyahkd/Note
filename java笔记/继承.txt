@@ -1,0 +1,4 @@
+public class 子类 extends 父类{   //在定义子类时在后加extends 父类名 可以使子类继承父类的成员变量和方法
+
+
+}

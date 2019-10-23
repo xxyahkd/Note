@@ -1,0 +1,1 @@
+update user set userName='ls2',passWord='333' where userId=2;

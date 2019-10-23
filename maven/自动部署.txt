@@ -1,0 +1,47 @@
+<!-- 配置当前模块构建过程中的特殊设置 -->
+	<build>
+		<finalName>controllerMvn</finalName><!--工程最终名字-->
+
+		<!-- 配置构建过程中需要使用的插件 -->
+		<plugins>
+			<plugin>
+
+				<!-- cargo是一个专门启动servlet容器（jboss,weblogic,tomcat..）的组织 -->
+				<groupId>org.codehaus.cargo</groupId>
+				<artifactId>cargo-maven2-plugin</artifactId>
+				<version>1.2.3</version>
+
+				<!-- 针对插件进行配置 -->
+				<configuration>
+					<!-- 配置当前系统中容器的位置 -->
+					<container>
+						<containerId>tomcat7x</containerId>
+						<home>D:\PLUG_IN\tmocat\apache-tomcat-7.0.90</home>
+					</container>
+					<configuration>
+						<type>existing</type>
+						<home>D:\PLUG_IN\tmocat\apache-tomcat-7.0.90</home>
+						<!-- 如果Tomcat端口为默认值8080则不必设置该属性 -->
+						<!--<properties>
+							<cargo.servlet.port>8989</cargo.servlet.port>
+						</properties>-->
+					</configuration>
+				</configuration>
+
+
+				<!-- 配置插件在什么情况下执行 -->
+				<executions>
+					<execution>
+						<id>cargo-run</id>
+
+						<!-- 生命周期的阶段 -->
+						<phase>install</phase>
+						<goals>
+							<!-- 插件的目标 -->
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build> 

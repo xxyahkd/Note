@@ -1,0 +1,4 @@
+char[] 变量名1 =  变量名.toCharArray();  //将String类型的变量，变为char数组
+例如：
+String str = scan.next();
+char[] input = str.toCharArray();

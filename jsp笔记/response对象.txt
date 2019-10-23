@@ -1,0 +1,5 @@
+response.setHeader("Cache-Control","no-cache");  缓存方式 数据被读取后不保存
+response.setHeader("refresh","2;URL=welocom.jsp")  设置定时跳转
+response.setIntHeader("Refresh",2);   //页面刷新时间单位秒
+response.sendRedirect("URL");  //实现页面跳转
+response.addCookie(myCookie);   //在游览器中设置Cookie

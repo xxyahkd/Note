@@ -1,0 +1,16 @@
+
+设置焦点
+function init(){    
+
+var ctrl=document.getElementById("UserName");    
+
+ctrl.focus();    
+
+}
+//判断是否有焦点
+if(document.activeElement.id="txtIdHouse")
+{
+}
+//得知焦点在哪
+var act = document.activeElement.id;
+act就是现在获得焦点控件的id值

@@ -1,0 +1,56 @@
+git add  文件名 从工作区添加到暂存区
+git commit -m " " 文件名 从暂存区提交到本地库
+git commit -a 文件名
+mkdir 文件名  创建文件
+ll  显示当前列表
+cd 文件夹   进入文件位置
+git init 初始化本地库命令
+ls -lA 查看隐藏列表
+git config  设置项目级别  仅在本地库范围内有效
+	git config user.name xxy
+	git config user.email 1062117629@qq.com
+git config --global 设置用户级别 登录当前操作系统的
+信息保存的位置
+	.git/config
+
+git status 看工作区暂存区状态
+
+git rm --cached 文件名  从暂存区回退到工作区
+
+git checkout -- 文件名
+
+git log 打印日志  （--pretty=oneline）  显示一行  （--oneline） (git reflog)
+
+git reset --hard 索引值(HEAD^个数往后退)（HEAD~数字只能后退）
+             --mixed 暂存区仓库改变
+             --soft  仓库改变
+
+git diff （添加HEAD与仓库）文件名  工作区修改的文件和暂存区的区别   不带文件名比较多个文件
+
+git branch -v  查看分支
+
+git branch  分支名   创建新分支
+https://gitee.com/xxyahkd/galgame.git
+ git checkout 分支名  切换分支
+
+git merge 分支名  在当前分支下合并另一分支
+
+git remote add 别名   原名         添加别名
+ 
+git push  地址  分支      推送本地到远程仓库
+
+git clone 远程库地址     克隆远程库
+
+git pull 远程地址  分支名  拉取pull（fetch+merge）
+
+git fetch 远程地址 分支名字  从远程拉取到本地（并未改变工作区）
+
+git checkout 远程地址别名/分支名   切换到拉取下来的本地
+
+ssh登录
+	cd ~ 进入用户根目录
+	rm -r .ssh/ 删除原先的ssh目录
+	
+
+
+

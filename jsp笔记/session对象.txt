@@ -1,0 +1,7 @@
+session.getId()  //session的唯一标识符
+session.getCreationTime()  //session的创建时间  可使用 new  java.util.Date(秒数).toString()返回明确时间
+session.getLastAccessedTime()  //session的最后访问时间  同上一样
+session.getMaxInactiveInterval()  //session的实效时间
+session.setAttribute("username",username)    //在seseeion中设置一个变量 之后能通过get方法获取
+session.isNew()  //判断当前session是不是新创建的
+session.invalidate()  //彻底清除session对象

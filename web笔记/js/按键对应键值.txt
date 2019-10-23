@@ -1,0 +1,15 @@
+参考：https://www.cnblogs.com/daysme/p/6272570.html
+
+
+48到57	0到9
+65到90	a到z（A到Z）
+112到135	F1到F24
+8	BackSpace（退格）
+9	Tab
+13	Enter（回车）
+20	Caps_Lock（大写锁定）
+32	Space（空格键）
+37	Left（左箭头）
+38	Up（上箭头）
+39	Right（右箭头）
+40	Down（下箭头）

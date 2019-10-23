@@ -1,0 +1,7 @@
+Maven坐标
+	groupid	公司或组织域名倒叙+项目名
+		<groupId>com.atguigu.maven</groupId>
+	artifactid	模块名
+		<artifactId>Hello</artifactId>
+	version 	版本
+		<version>0.0.1</version>

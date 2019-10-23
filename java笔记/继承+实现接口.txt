@@ -1,0 +1,5 @@
+继承接口的类也可以继承一个普通的父类，在实现若干接口
+语法 public class 子类名 extends 父类 implements 接口{
+     
+     } 
+强调：必须先继承(extends)在实现接口(implements)。不能颠倒！

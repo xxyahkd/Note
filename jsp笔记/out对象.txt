@@ -1,0 +1,7 @@
+out.println();向游览器页面输出
+out.print(); 与上对比,源代码不换行
+out.newLine(); 源代码换行
+out.getBufferSize()  获取缓冲区的大小
+out.getRemaining()  获取当前缓冲区的剩余字节大小
+out.flush();  强制刷新输出缓冲区中储存的数据
+out.clearBuffer();  强制清空缓冲区中已经储存的数据

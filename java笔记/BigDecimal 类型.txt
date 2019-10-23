@@ -1,0 +1,37 @@
+小数计算不会有误差
+ 例 BigDecimal num=new BigDecimal(acc); acc放String类型
+用法：
+        add(BigDecimal)            BigDecimal对象中的值相加，然后返回这个对象。
+	subtract(BigDecimal)    BigDecimal对象中的值相减，然后返回这个对象。
+	multiply(BigDecimal)    BigDecimal对象中的值相乘，然后返回这个对象。	
+	divide(BigDecimal)        BigDecimal对象中的值相除，然后返回这个对象。
+	toString()                         将BigDecimal对象的数值转换成字符串。
+	doubleValue()                 将BigDecimal对象中的值以双精度数返回。
+	floatValue()                     将BigDecimal对象中的值以单精度数返回。
+	longValue()                     将BigDecimal对象中的值以长整数返回。
+	intValue()                       将BigDecimal对象中的值以整数返回。
+例题代码：
+        
+package day03;
+import java.math.BigDecimal;
+import java.util.Scanner;
+public class shouyin {
+	public static void main(String[] args) {
+		String  acc;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("请输入单价（￥）：");
+        acc=scan.nextLine();
+        BigDecimal price=new BigDecimal(acc);
+        System.out.println("请输入数量：");
+        acc=scan.nextLine();
+        BigDecimal num=new BigDecimal(acc);
+        System.out.println("请输入金额（￥）：");
+        acc=scan.nextLine();
+        BigDecimal money=new BigDecimal(acc);
+        scan.close();
+        System.out.print("应收金额为：￥");
+        System.out.print(price.multiply(num).doubleValue());
+        System.out.print("，找零为：￥");
+        System.out.println(money.subtract(price.multiply(num)).doubleValue());
+	}
+}

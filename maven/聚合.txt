@@ -1,0 +1,7 @@
+<module>
+	<!--指定各个子工程的相对路径-->
+	<module>../Hello</module>
+</module>
+
+
+在总工程的pom中mvn install

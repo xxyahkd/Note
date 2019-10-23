@@ -1,0 +1,5 @@
+<table style="border:0px;table-layout: fixed;width:600px" >
+	<tr>
+		<td style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><img src="..."></td>
+	</tr>
+</table>

@@ -1,0 +1,70 @@
+类型一：将滚动条隐藏
+	方法一：将滚动条大小设为0；有兼容限制
+		::-webkit-scrollbar{
+			display:none;(或者是width: 0;)
+		}
+	方法二：将滚动条隐藏在其他div外部
+		通过设置外部 overflow: hidden;
+		设置内部多出20px
+类型二：使用js技术实现  本质div的上移
+	外部设为overflow: hidden;
+	内部使用js判断鼠标滚轮事件，将使用自己的函数替代原本操作
+<script>
+	var flag=0;  表示是否进行启用
+	var subtop=0; //判断滚动区域
+	function updateFlagTo1(){  //判断执行内部滚动
+		flag=1;
+		var barst; 
+		var barsl;
+		window.onscroll=function(){  //设置在执行内部操作时，不执行外部滚动
+        			bars=document.documentElement.scrollTop;
+			barl=document.documentElement.scrollLeft;
+			window.scrollTo(barsl, barst);
+		} 
+		
+	}
+	function updateFlagTo0(){  //判断执行页面滚动
+		window.onscroll=null;
+		flag=0;
+	}
+	var scrollFunc = function (e) {    //检测到滚轮事件后执行函数
+		e = e || window.event;  //兼容游览器
+		var dnum=document.getElementById("subbar").children.length;  //通过这个变量来得知内部区块有多大
+		if(flag==1){
+			if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件               
+				if (e.wheelDelta > 0) { //页面向下滚
+					subtop+=10;
+					if(subtop>0)
+						subtop=0;
+					document.getElementById("subbar").style.top=subtop+'%';
+				}  
+				if (e.wheelDelta < 0) { //页面向上滚
+					subtop-=10;
+					if(dnum>3&&subtop<(100-dnum*30))
+						subtop=100-dnum*30;
+					document.getElementById("subbar").style.top=subtop+'%';
+				}  
+			} else if (e.detail) {  //Firefox滑轮事件  
+				if (e.detail < 0) {  //页面向下滚
+					subtop+=10;
+					if(subtop>0)
+						subtop=0;
+					document.getElementById("subbar").style.top=subtop+'%';
+				}  
+				if (e.detail > 0) {  //页面向上滚 
+					subtop-=10;
+					if(dnum>3&&subtop<(100-dnum*30))
+						subtop=100-dnum*30;	
+					document.getElementById("subbar").style.top=subtop+'%';
+				}  
+			} 
+		}
+	}  
+        //给页面绑定滑轮滚动事件  Firefox
+	if (document.addEventListener) {//firefox  
+		document.addEventListener('DOMMouseScroll', scrollFunc, false);  
+	}  
+        //滚动滑轮触发scrollFunc方法 ie 谷歌  
+	window.onmousewheel = document.onmousewheel = scrollFunc; 
+	
+</script>	

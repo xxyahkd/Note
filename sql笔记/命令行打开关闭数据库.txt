@@ -1,0 +1,2 @@
+net start mysql  打开数据库
+net stop mysql   关闭数据库

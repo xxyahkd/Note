@@ -1,0 +1,13 @@
+参考：https://www.cnblogs.com/xiaoheimiaoer/p/4716191.html
+
+我们看到事件还有这么几个属性：ctrlKey（metaKey）、altKey、shiftKey，当你同时按下组合键的时候，这几个属性会变成true，所以组合键就可以通过监听按键code和这几个属性的状态进行判断了。
+
+document.onkeydown = function(e) {
+        var keyCode = e.keyCode || e.which || e.charCode;
+        var ctrlKey = e.ctrlKey || e.metaKey;
+        if(ctrlKey && keyCode == 83) {
+            alert('save');
+        }
+        e.preventDefault();
+        return false;
+    }

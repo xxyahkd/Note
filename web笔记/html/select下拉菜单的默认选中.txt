@@ -1,0 +1,4 @@
+var osel=document.getElementById("selID"); //得到select的ID
+ var opts=osel.getElementsByTagName("option");//得到数组option
+ opts[3].selected=true;//设置option第4个元素，即value="3"为默认选中
+ 
